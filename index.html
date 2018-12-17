@@ -2,13 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="assets/images/favicon.png">
     <title>Liist</title>
     <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="js/preload.js"></script>
     <link rel="stylesheet" href="css/index.css">
   </head>
-  <body>
+  <body class="unloaded">
     <!--BODY-->
+    <div id="top">
+      <img src="assets/images/logo-48.png">
+      <h1>Liist</h1>
+    </div>
+    <div class="panel" id="panel-home">
+      <img src="assets/images/sample-bw.jpeg" width="256" height="256">
+      <div>
+        <h1>create spicy cover art for your spotify playlists.</h1>
+        <div id="divider"></div>
+        <p><b>To get started, connect your Spotify account to Liist:</b></p>
+        <button>
+          <img src="assets/images/logo-32.png">
+          <img src="assets/images/plus-32.png" id="add">
+          <img src="assets/images/spotify-32.png">
+        </button>
+      </div>
+    </div>
+    <div id="loader">
+      <img src="assets/images/logo-96.png">
+    </div>
     <script src="js/liist.js"></script>
     <script src="js/spotify.js"></script>
     <script src="js/index.js"></script>

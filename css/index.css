@@ -1,4 +1,153 @@
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 200;
+  src: url("../../assets/fonts/Proxima Nova Light.ttf");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: normal;
+  src: url("../../assets/fonts/Proxima Nova Reg.ttf");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  src: url("../../assets/fonts/Proxima Nova Bold.ttf");
+}
+
 body {
   margin: 0px;
   padding: 0px;
+  color: #19E68C;
+  background: #191414;
+  font-family: "Proxima Nova";
+  transition: transform ease 1.2s;
+}
+
+body.unloaded {
+  transform: translateY(48px);
+}
+
+body.unloaded > #loader {
+  transform: translateY(-48px);
+}
+
+body.unloaded > .panel {
+  transform: translateY(48px);
+}
+
+#top {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  box-sizing: border-box;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+#top > h1 {
+  font-size: 48px;
+  margin: 0px;
+  padding: 6px;
+  text-align: center;
+}
+
+#top > img {
+  width: 48px;
+  height: 48px;
+  padding: 6px;
+}
+
+#loader {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  z-index: 1000;
+  background: #191414;
+  pointer-events: none;
+  transition: transform ease 1.2s;
+}
+
+.panel {
+  transition: transform ease 1.2s 0.4s;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0px;
+  top: 60px;
+  height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+#panel-home > img {
+  margin: 18px;
+  width: 256px;
+  height: 256px;
+  box-sizing: border-box;
+}
+
+#panel-home > div {
+  width: 256px;
+  height: 256px;
+  box-sizing: border-box;
+  margin: 18px;
+  overflow: hidden;
+}
+
+#panel-home > div > h1 {
+  font-weight: 200;
+  font-size: 32px;
+  margin: 0px;
+  padding: 0px;
+  margin-top: -6px;
+  color: white;
+}
+
+#panel-home > div > #divider {
+  width: 144px;
+  height: 8px;
+  margin: 18px 0px;
+  background: white;
+  border-radius: 100px;
+}
+
+#panel-home > div > button {
+  width: 256px;
+  height: 64px;
+  margin-top: 9px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background: linear-gradient(135deg, #19E68C, #1DB954);
+  font-size: 32px;
+  color: white;
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  line-height: 32px;
+  cursor: pointer;
+}
+
+#panel-home > div > button > img {
+  vertical-align: middle;
+}
+
+#panel-home > div > button > #add {
+  width: 16px;
+  height: 16px;
+  padding: 8px;
 }
