@@ -114,7 +114,7 @@ body.unloaded > .panel {
   font-size: 32px;
   margin: 0px;
   padding: 0px;
-  margin-top: -6px;
+  margin-top: -4px;
   color: white;
 }
 
@@ -144,10 +144,33 @@ body.unloaded > .panel {
 
 #panel-home > div > button > img {
   vertical-align: middle;
+  width: 32px;
+  height: 32px;
 }
 
 #panel-home > div > button > #add {
   width: 16px;
   height: 16px;
   padding: 8px;
+}
+
+#panel-app > p {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 16px;
+  position: absolute;
+  top: -8px;
+  padding: 0px;
+  margin: 0px;
+  z-index: 1;
+}
+
+#panel-app > #welcome {
+  left: 52px;
+  pointer-events: none;
+}
+
+#panel-app > #logout {
+  right: 52px;
+  cursor: pointer;
 }

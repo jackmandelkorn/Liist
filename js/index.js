@@ -2,11 +2,16 @@ Spotify.USER = null
 Spotify.PLAYLISTS = null
 
 const init = () => {
-  Spotify.Session.GET_USER(() => {
-    Spotify.Session.GET_PLAYLISTS(() => {
-      Liist.START()
+  if (Liist.PANEL !== "home") {
+    Spotify.Session.GET_USER(() => {
+      Spotify.Session.GET_PLAYLISTS(() => {
+        Liist.START()
+      })
     })
-  })
+  }
+  else {
+    Liist.START()
+  }
 }
 
 Spotify.Session.GET_PLAYLISTS = (callback) => {

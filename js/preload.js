@@ -2,6 +2,7 @@ let Spotify = {}
 Spotify.Session = {}
 
 let Liist = {}
+Liist.PANEL = "home"
 
 window.location.getParameter = (n) => {
   let result = null

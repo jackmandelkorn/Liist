@@ -20,12 +20,17 @@
         <h1>create spicy cover art for your spotify playlists.</h1>
         <div id="divider"></div>
         <p><b>To get started, connect your Spotify account to Liist:</b></p>
-        <button>
+        <button onclick="Spotify.AUTH_CLICK()">
           <img src="assets/images/logo-32.png">
           <img src="assets/images/plus-32.png" id="add">
           <img src="assets/images/spotify-32.png">
         </button>
       </div>
+    </div>
+    <div class="panel" id="panel-app">
+      <!--TODO-->
+      <p id="welcome">logged in as <span id="name"></span>.</p>
+      <p id="logout" onclick="Spotify.LOGOUT_CLICK()">logout.</p>
     </div>
     <div id="loader">
       <img src="assets/images/logo-96.png">
