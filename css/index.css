@@ -296,4 +296,5 @@ body.unloaded > .panel {
   flex-grow: 1;
   overflow: hidden;
   overflow-y: scroll;
+  background: linear-gradient(#191919,#191414);
 }

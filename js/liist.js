@@ -6,8 +6,13 @@ Liist.START = () => {
     Liist.THEME_CONTAINER = document.getElementById("theme-container")
     Liist.IMAGE_CONTAINER = document.getElementById("image-container")
     Liist.APP()
+    document.title += (" - Cover art editor")
+    Liist.UNLOAD()
   }
-  Liist.UNLOAD()
+  else if (Liist.PANEL === "home") {
+    document.title += (" - Create spicy cover art for your spotify playlists")
+    Liist.UNLOAD()
+  }
 }
 
 Liist.UNLOAD = () => {
