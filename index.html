@@ -11,8 +11,12 @@
   <body class="unloaded">
     <!--BODY-->
     <div id="top">
-      <img src="assets/images/logo-48.png">
-      <h1>Liist</h1>
+      <svg class="color color-fill" id="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 224 224">
+        <g>
+          <path d="M120.4,29.86667l-52.26667,97.06667h44.8v67.2l52.26667,-97.06667h-44.8z"/>
+        </g>
+      </svg>
+      <h1 class="color color-color">Liist</h1>
     </div>
     <div class="panel" id="panel-home">
       <img src="assets/images/sample-bw.jpeg" width="256" height="256">
@@ -28,9 +32,40 @@
       </div>
     </div>
     <div class="panel" id="panel-app">
-      <!--TODO-->
-      <p id="welcome">logged in as <span id="name"></span>.</p>
-      <p id="logout" onclick="Spotify.LOGOUT_CLICK()">logout.</p>
+      <div id="main-app">
+        <div class="column">
+          <h1>playlist</h1>
+          <div class="divider"></div>
+          <div class="content" id="playlist-container"></div>
+        </div>
+        <div class="column">
+          <h1>theme</h1>
+          <div class="divider"></div>
+          <div class="content" id="theme-container"></div>
+        </div>
+        <div class="column">
+          <h1>image</h1>
+          <div class="divider"></div>
+          <div class="content" id="image-container"></div>
+        </div>
+        <div class="square">
+          <div id="main" class="color color-background"></div>
+          <div id="sub">
+            <h1>like how it's looking?</h1>
+            <button>
+              <img src="assets/images/logo-32.png">
+              save cover art
+            </button>
+          </div>
+        </div>
+        <div class="column wide">
+          <h1>settings</h1>
+          <div class="divider"></div>
+          <div class="content"></div>
+        </div>
+      </div>
+      <p id="welcome" class="color color-color">logged in as <span id="name"></span>.</p>
+      <p id="logout" class="color color-color" onclick="Spotify.LOGOUT_CLICK()">logout.</p>
     </div>
     <div id="loader">
       <img src="assets/images/logo-96.png">

@@ -57,7 +57,8 @@ body.unloaded > .panel {
   text-align: center;
 }
 
-#top > img {
+#logo {
+  fill: #19E68C;
   width: 48px;
   height: 48px;
   padding: 6px;
@@ -123,7 +124,6 @@ body.unloaded > .panel {
   height: 8px;
   margin: 18px 0px;
   background: white;
-  border-radius: 100px;
 }
 
 #panel-home > div > button {
@@ -173,4 +173,127 @@ body.unloaded > .panel {
 #panel-app > #logout {
   right: 52px;
   cursor: pointer;
+}
+
+#main-app {
+  box-sizing: border-box;
+  margin: 40px;
+  margin-top: 120px;
+  height: calc(100vh - 172px);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+#main-app > div {
+  margin: 12px;
+  height: calc(100vh - 172px);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+#main-app > .column {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#main-app > .column.wide {
+  flex-grow: 1.5;
+}
+
+#main-app > .square {
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: calc(100vh - 316px);
+}
+
+#main-app > .square > #main {
+  background: #19E68C;
+  width: calc(100vh - 316px);
+  height: calc(100vh - 316px);
+}
+
+#main-app > .square > #sub {
+  width: calc(100vh - 316px);
+  height: 120px;
+  margin-top: 24px;
+  border-bottom: 8px solid white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: center;
+}
+
+#main-app > .square > #sub > h1 {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0px;
+  margin-bottom: 18px;
+  padding: 0px;
+  max-width: 100%;
+  display: inline;
+  color: white;
+  flex-shrink: 0;
+  flex-grow: 0;
+  text-align: right;
+}
+
+#main-app > .square > #sub > button {
+  height: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background: white;
+  font-size: 16px;
+  color: #191414;
+  font-family: "Proxima Nova";
+  font-weight: 200;
+  line-height: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#main-app > .square > #sub > button > img {
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  margin-left: -4px;
+  filter: invert(100%);
+}
+
+#main-app > .column > h1 {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0px;
+  padding: 0px;
+  width: 0px;
+  color: white;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+#main-app > .column > h1:not(:first-child) {
+  margin-top: 18px;
+}
+
+#main-app > .column > .divider {
+  width: 100%;
+  height: 8px;
+  background: white;
+  margin: 18px 0px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+#main-app > .column > .content {
+  width: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+  overflow-y: scroll;
 }
