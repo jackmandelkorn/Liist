@@ -23,6 +23,7 @@ body {
   background: #191414;
   font-family: "Proxima Nova";
   transition: transform ease 1.2s;
+  overflow: hidden;
 }
 
 body.unloaded {
@@ -124,6 +125,7 @@ body.unloaded > .panel {
   height: 8px;
   margin: 18px 0px;
   background: white;
+  border-radius: 0px;
 }
 
 #panel-home > div > button {
@@ -195,18 +197,13 @@ body.unloaded > .panel {
 }
 
 #main-app > .column {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-#main-app > .column.wide {
-  flex-grow: 1.5;
-}
-
 #main-app > .square {
-  flex-shrink: 0;
-  flex-grow: 0;
+  flex: 0;
   width: calc(100vh - 316px);
 }
 
@@ -237,8 +234,7 @@ body.unloaded > .panel {
   max-width: 100%;
   display: inline;
   color: white;
-  flex-shrink: 0;
-  flex-grow: 0;
+  flex: 0;
   text-align: right;
 }
 
@@ -274,8 +270,7 @@ body.unloaded > .panel {
   padding: 0px;
   width: 0px;
   color: white;
-  flex-shrink: 0;
-  flex-grow: 0;
+  flex: 0;
 }
 
 #main-app > .column > h1:not(:first-child) {
@@ -287,8 +282,10 @@ body.unloaded > .panel {
   height: 8px;
   background: white;
   margin: 18px 0px;
+  flex: 0;
+  flex-basis: 8px;
   flex-shrink: 0;
-  flex-grow: 0;
+  border-radius: 0px
 }
 
 #main-app > .column > .content {
@@ -297,4 +294,38 @@ body.unloaded > .panel {
   overflow: hidden;
   overflow-y: scroll;
   background: linear-gradient(#191919,#191414);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#main-app > .column > .content > * {
+  transition: border-bottom ease 0.5s;
+  cursor: pointer;
+}
+
+#main-app > .column > .content > img {
+  width: 100%;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  border-bottom: 0px solid white;
+}
+
+#main-app > .column > .content > img.selected {
+  border-bottom: 8px solid white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }

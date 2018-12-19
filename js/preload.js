@@ -2,7 +2,12 @@ let Spotify = {}
 Spotify.Session = {}
 
 let Liist = {}
+Liist.RESIZE_ARR = []
 Liist.PANEL = "home"
+Liist.Config = {}
+Liist.PLAYLISTS = []
+Liist.IMAGE_SOURCE = "../../assets/images/1000/"
+Liist.PREVIEW = 640
 
 window.location.getParameter = (n) => {
   let result = null
