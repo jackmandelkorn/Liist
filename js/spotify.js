@@ -6,7 +6,8 @@ Spotify.SCOPES = [
   "playlist-read-collaborative",
   "playlist-modify-public",
   "playlist-read-private",
-  "playlist-modify-private"
+  "playlist-modify-private",
+  "ugc-image-upload"
 ]
 
 Spotify.AUTH = () => {

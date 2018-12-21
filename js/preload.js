@@ -2,12 +2,19 @@ let Spotify = {}
 Spotify.Session = {}
 
 let Liist = {}
-Liist.RESIZE_ARR = []
+Liist.INPUT_ARR = []
+Liist.CHECKBOX_ARR = []
 Liist.PANEL = "home"
 Liist.Config = {}
 Liist.PLAYLISTS = []
 Liist.IMAGE_SOURCE = "../../assets/images/1000/"
 Liist.PREVIEW = 640
+Liist.DIM = 1000
+
+AWS.config.update({region: 'us-east-1'})
+AWS.config.credentials = new AWS.Credentials("***", "***")
+var docClient = new AWS.DynamoDB.DocumentClient()
+
 
 window.location.getParameter = (n) => {
   let result = null
@@ -21,7 +28,7 @@ window.location.getParameter = (n) => {
   return result
 }
 
-window.blobify = (image) => {
+window.blobify = (dataURL) => {
   var BASE64_MARKER = ';base64,';
   if (dataURL.indexOf(BASE64_MARKER) == -1) {
     var parts = dataURL.split(',');

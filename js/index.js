@@ -10,8 +10,8 @@ const init = () => {
           let imgPREVIEW = new Image()
           imgFULL.src = (Liist.IMAGE_SOURCE + Liist.IMAGES[i])
           imgPREVIEW.src = (Liist.IMAGE_SOURCE + Liist.IMAGES[i])
-          imgFULL.width = 1000
-          imgFULL.height = 1000
+          imgFULL.width = Liist.DIM
+          imgFULL.height = Liist.DIM
           imgPREVIEW.width = Liist.PREVIEW
           imgPREVIEW.height = Liist.PREVIEW
           Liist.IMAGES[i] = {}
@@ -72,9 +72,8 @@ Spotify.Session.SET_COVER = (id,image,callback) => {
     url: "https://api.spotify.com/v1/playlists/" + id + "/images",
     method: "PUT",
     beforeSend: Spotify.AUTHORIZE,
-    processData: false,
-    contentType: "application/octet-stream",
-    data: window.blobify(image),
+    contentType: "image/jpeg",
+    data: image.substring(23),
     success: (res) => {
       if (callback) {
         (callback)(res)
