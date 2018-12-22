@@ -2,8 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="manifest" href="manifest.json">
+    <meta name="Description" content="create spicy cover art for your spotify playlists.">
+    <meta name="Keywords" content="playlist, cover, art, spotify, replace, cover art, playlists, liist, liist.io, custom, album, album art, spicy, tool, generate, generator, create, playlist cover, playlist art, editor, cover art editor, album art editor, square">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Liist">
+    <meta name="apple-mobile-web-app-title" content="Liist">
+    <meta name="theme-color" content="#191414">
+    <meta name="msapplication-navbutton-color" content="#191414">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="https://liist.io">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" type="image/png" sizes="96x96" href="assets/images/logo-96.png">
     <link rel="icon" href="assets/images/favicon.png">
-    <title>Liist</title>
+    <title>Liist - create spicy cover art for your spotify playlists.</title>
     <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.219.1/aws-sdk.js"></script>
     <script src="js/preload.js"></script>
@@ -12,7 +25,6 @@
     <link rel="stylesheet" href="css/range.css">
   </head>
   <body class="unloaded">
-    <!--BODY-->
     <div id="top">
       <svg class="color color-fill" id="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 224 224">
         <g>
@@ -58,13 +70,21 @@
           </div>
           <div id="sub">
             <h1>like how it's looking?</h1>
-            <button id="save" onclick="Liist.SAVE_CLICK()">
-              <img src="assets/images/logo-32.png">
-              save cover art
-            </button>
+            <div>
+              <button id="download" onclick="Liist.DOWNLOAD_CLICK()">
+                <img src="assets/images/download.png">
+                download
+              </button>
+              <span>or</span>
+              <button id="save" onclick="Liist.SAVE_CLICK()">
+                <div id="save-icon"></div>
+                <img src="assets/images/logo-32.png" style="filter: invert(100%);">
+                save cover art
+              </button>
+            </div>
           </div>
         </div>
-        <div class="column">
+        <div class="column" id="customize">
           <h1>customize</h1>
           <div class="divider"></div>
           <div class="content" id="settings-container">
@@ -149,6 +169,7 @@
     </div>
     <div id="loader">
       <img src="assets/images/logo-96.png">
+      <p id="mobile" style="display: none;">for now, Liist <u>does not support mobile devices</u>. please visit us on a computer, instead!</p>
     </div>
     <script src="js/liist.js"></script>
     <script src="js/spotify.js"></script>

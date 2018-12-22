@@ -10,6 +10,7 @@ Liist.PLAYLISTS = []
 Liist.IMAGE_SOURCE = "../../assets/images/1000/"
 Liist.PREVIEW = 640
 Liist.DIM = 1000
+Liist.SAVE = JSON.stringify({})
 
 AWS.config.update({region: 'us-east-1'})
 AWS.config.credentials = new AWS.Credentials("***", "***")

@@ -23,14 +23,15 @@ Liist.START = () => {
     Liist.ROUNDED_BUMP_INPUT = document.getElementById("rounded-bump-input")
     Liist.BUMP_INPUT = document.getElementById("bump-input")
     Liist.GRADIENT_FADE_INPUT = document.getElementById("gradient-fade-input")
+    Liist.SAVE_ICON = document.getElementById("save-icon")
     Liist.EXPORT = null
-    document.title += (" - Cover art editor")
+    document.title = ("Liist - Cover art editor")
     Liist.APP()
     Liist.FILL()
     Liist.UNLOAD()
   }
   else if (Liist.PANEL === "home") {
-    document.title += (" - Create spicy cover art for your spotify playlists")
+    document.title = ("Liist - Create spicy cover art for your spotify playlists")
     Liist.UNLOAD()
   }
 }
@@ -167,6 +168,9 @@ Liist.ADD_PLAYLISTS = () => {
     let img = new Image()
     img.onload = () => {
       Liist.PLAYLIST_CONTAINER.appendChild(img)
+    }
+    img.onerror = () => {
+      img.src = Liist.EXPORT
     }
     img.onclick = () => {
       Liist.Config.PLAYLIST = n
@@ -354,6 +358,16 @@ Liist.RENDER = () => {
   Liist.PUT_MAIN_TEXT()
   Liist.EXPORT = Liist.CANVAS.toDataURL()
   Liist.MAIN.style.backgroundImage = ("url(" + Liist.EXPORT + ")")
+  if (JSON.stringify(Liist.Config) !== Liist.SAVE) {
+    let color = Liist.Config.MAIN_COLOR
+    if (color.constructor === Array) {
+      color = Liist.Config.MAIN_COLOR[1]
+    }
+    Liist.SAVE_ICON.style.background = color
+  }
+  else {
+    Liist.SAVE_ICON.style.background = "transparent"
+  }
 }
 
 Liist.PUT_MAIN_TEXT = () => {
@@ -530,6 +544,14 @@ Liist.ALIGN_CLICK = (val) => {
   Liist.UPDATE()
 }
 
+Liist.DOWNLOAD_CLICK = () => {
+  let a = document.createElement("a")
+  a.href = Liist.EXPORT
+  a.download = (Liist.Config.MAIN_TEXT || "cover").toString().replace(/[^a-z0-9]/gi, '-').toLowerCase()
+  a.click()
+  delete a
+}
+
 Liist.LOAD_PLAYLIST = (callback) => {
   let params = {
     TableName: "Liist",
@@ -547,6 +569,10 @@ Liist.LOAD_PLAYLIST = (callback) => {
         let p = Liist.Config.PLAYLIST
         Liist.Config = JSON.parse(data.Item.config)
         Liist.Config.PLAYLIST = p
+        Liist.SAVE = JSON.stringify(Liist.Config)
+      }
+      else {
+        Liist.SAVE = JSON.stringify({})
       }
       if (callback) {
         (callback)()
@@ -572,6 +598,8 @@ Liist.UPDATE_PLAYLIST = (callback) => {
 			console.log(err)
 		}
     else {
+      Liist.Config.SAVE = JSON.stringify(Liist.Config)
+      Liist.RENDER()
       if (callback) {
         (callback)()
       }

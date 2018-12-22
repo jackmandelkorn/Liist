@@ -200,6 +200,7 @@ body.unloaded > .panel {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-width: 92px;
 }
 
 #main-app > .square {
@@ -238,7 +239,7 @@ body.unloaded > .panel {
   text-align: right;
 }
 
-#main-app > .square > #sub > button {
+#main-app > .square > #sub > div > button {
   height: 48px;
   padding-left: 16px;
   padding-right: 16px;
@@ -255,12 +256,25 @@ body.unloaded > .panel {
   text-align: center;
 }
 
-#main-app > .square > #sub > button > img {
+#main-app > .square > #sub > div > span {
+  height: 48px;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: white;
+  font-family: "Proxima Nova";
+  font-weight: 200;
+  line-height: 16px;
+}
+
+#main-app > .square > #sub > div > button > img {
   vertical-align: middle;
   width: 24px;
   height: 24px;
   margin-left: -4px;
-  filter: invert(100%);
 }
 
 #main-app > .column > h1 {
@@ -369,6 +383,7 @@ body.unloaded > .panel {
 #save {
   transition: background ease 0.3s;
   background: white;
+  position: relative;
 }
 
 #save:active {
@@ -377,6 +392,10 @@ body.unloaded > .panel {
 
 #sample {
   filter: grayscale(100%);
+}
+
+#customize {
+  min-width: 144px !important;
 }
 
 #settings-container > .row {
@@ -504,4 +523,20 @@ div[type="checkbox"].checked:before {
   width: 12px;
   height: 12px;
   background: white;
+}
+
+#save-icon {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: transparent;
+  transition: background ease 0.3s;
+}
+
+#mobile {
+  width: 256px;
+  font-weight: 200;
+  font-size: 18px;
 }

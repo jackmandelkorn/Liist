@@ -1,0 +1,16 @@
+{
+  "name": "Liist",
+  "short_name": "Liist",
+  "lang": "en-US",
+  "start_url": "https://liist.io",
+  "display": "standalone",
+  "orientation": "landscape",
+  "theme_color": "#191414",
+  "icons": [
+    {
+      "src": "assets/images/logo-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}
