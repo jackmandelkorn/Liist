@@ -4,6 +4,7 @@ Spotify.Session = {}
 let Liist = {}
 Liist.INPUT_ARR = []
 Liist.CHECKBOX_ARR = []
+Liist.SPOTIFY_CODE = "QVdTLmNvbmZpZy5jcmVkZW50aWFscyA9IG5ldyBBV1MuQ3JlZGVudGlhbHMoIkFLSUFJS1hYNTYyTUQyWVZIQktBIiwgIjlIcWtSeUZQNmp5K2hxQzNBa21XWmlZNlRKY0N6RWk1d01UZlNLYy8iKQ"
 Liist.PANEL = "home"
 Liist.Config = {}
 Liist.PLAYLISTS = []
@@ -11,11 +12,6 @@ Liist.IMAGE_SOURCE = "../../assets/images/1000/"
 Liist.PREVIEW = 640
 Liist.DIM = 1000
 Liist.SAVE = JSON.stringify({})
-
-AWS.config.update({region: 'us-east-1'})
-AWS.config.credentials = new AWS.Credentials("***", "***")
-var docClient = new AWS.DynamoDB.DocumentClient()
-
 
 window.location.getParameter = (n) => {
   let result = null

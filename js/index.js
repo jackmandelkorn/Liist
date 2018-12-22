@@ -1,6 +1,9 @@
 Spotify.USER = null
 Spotify.PLAYLISTS = null
 
+AWS.config.update({region: 'us-east-1'})
+var docClient = new AWS.DynamoDB.DocumentClient()
+
 const init = () => {
   if (Liist.PANEL !== "home") {
     Spotify.Session.GET_USER(() => {
