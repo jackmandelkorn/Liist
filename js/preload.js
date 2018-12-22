@@ -13,7 +13,7 @@ Liist.DIM = 1000
 Liist.SAVE = JSON.stringify({})
 
 AWS.config.update({region: 'us-east-1'})
-AWS.config.credentials = new AWS.Credentials("***", "***")
+AWS.config.credentials = new AWS.Credentials("AKIAIBXSOBBKZ3X7EYAA", "SfED/P4PL7eu/44QyLAb+wDkaclFKzAVi8w5dfCY")
 var docClient = new AWS.DynamoDB.DocumentClient()
 
 

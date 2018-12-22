@@ -531,6 +531,8 @@ Liist.SAVE_CLICK = () => {
   Spotify.Session.SET_COVER(id,Liist.CANVAS.toDataURL("image/jpeg"),() => {
     Liist.UPDATE_PLAYLIST(() => {
       document.getElementById("playlist-" + Liist.Config.PLAYLIST.toString()).src = Liist.EXPORT
+      Liist.SAVE = JSON.stringify(Liist.Config)
+      Liist.RENDER()
     })
   })
 }
@@ -598,8 +600,6 @@ Liist.UPDATE_PLAYLIST = (callback) => {
 			console.log(err)
 		}
     else {
-      Liist.Config.SAVE = JSON.stringify(Liist.Config)
-      Liist.RENDER()
       if (callback) {
         (callback)()
       }

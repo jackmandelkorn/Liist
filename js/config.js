@@ -10,7 +10,16 @@ Liist.THEMES = [
   ["#52835B","#E4BA92"],
   ["#FFDC39","#E539F8"],
   ["#D4D4D4","#E484C9"],
-  ["#4CFC4F","#B646FF"]
+  ["#4CFC4F","#B646FF"],
+  ["#000000","#FF0000"],
+  ["#A53860","#F9DBBD"],
+  ["#E87461","#7AC74F"],
+  ["#403F4C","#E84855"],
+  ["#0B032D","#F67E7D"],
+  ["#221E22","#EE5622"],
+  ["#F64740","#477998"],
+  ["#28502E","#8C7051"],
+  ["#7371FC","#E5D9F2"]
 ]
 
 Liist.IMAGES = [
@@ -18,5 +27,30 @@ Liist.IMAGES = [
   "peppers.png",
   "cactus.png",
   "avocado.png",
-  "strawberry.png"
+  "smoke.png",
+  "sad-dog.png",
+  "flame.png",
+  "lambo.png",
+  "ice.png",
+  "banana.png",
+  "balloon.png",
+  "tropical.png",
+  "wet.png",
+  "astronaut.png",
+  "wine.png",
+  "legs.png",
+  "speaker.png",
+  "solocups.png",
+  "palmtree.png",
+  "water.png",
+  "dog.png",
+  "strawberry.png",
+  "saxophone.png",
+  "muscles.png",
+  "bullets.png",
+  "ski.png",
+  "tree.png",
+  "casette.png",
+  "jaguar.png",
+  "tomato.png"
 ]

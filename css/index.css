@@ -485,6 +485,7 @@ body.unloaded > .panel {
   line-height: 14px;
   font-family: "Proxima Nova";
   font-weight: 200;
+  cursor: pointer;
 }
 
 div[type="checkbox"] {
@@ -539,4 +540,25 @@ div[type="checkbox"].checked:before {
   width: 256px;
   font-weight: 200;
   font-size: 18px;
+}
+
+#footer {
+  position: fixed;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  left: 18px;
+  top: calc(100vh - 32px);
+  line-height: 14px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.3);
+  font-weight: 200;
+  transition: all ease 0.5s;
+}
+
+#me {
+  color: #19E68C;
+  text-decoration: underline;
+  font-weight: normal;
+  cursor: pointer;
 }
