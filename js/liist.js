@@ -164,12 +164,6 @@ Liist.ADD_PLAYLISTS = () => {
   for (let i = 0; i < Liist.PLAYLISTS.length; i++) {
     let playlist = Liist.PLAYLISTS[i]
     let n = i
-    try {    
-    	let src = playlist.images[0].url
-    } catch (e) {
-	img.style.background = "rgba(255,255,255,0.3)"
-      	Liist.PLAYLIST_CONTAINER.appendChild(img)
-    }
     let img = new Image()
     img.onload = () => {
       Liist.PLAYLIST_CONTAINER.appendChild(img)
@@ -189,7 +183,13 @@ Liist.ADD_PLAYLISTS = () => {
     if (n === (Liist.PLAYLISTS.length - 1)) {
       img.style.marginBottom = "0px"
     }
-    img.src = src
+    try {    
+    	let src = playlist.images[0].url
+    	img.src = src
+    } catch (e) {
+	img.style.background = "rgba(255,255,255,0.3)"
+      	Liist.PLAYLIST_CONTAINER.appendChild(img)
+    }
   }
 }
 
