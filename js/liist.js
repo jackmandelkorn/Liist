@@ -296,7 +296,9 @@ Liist.ADD_IMAGES = () => {
     if (n === (Liist.IMAGES.length - 1)) {
       img.style.marginBottom = "0px"
     }
-    img.src = src
+    if (src) {
+      img.src = src
+    }
   }
 }
 
