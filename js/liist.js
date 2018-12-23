@@ -164,7 +164,12 @@ Liist.ADD_PLAYLISTS = () => {
   for (let i = 0; i < Liist.PLAYLISTS.length; i++) {
     let playlist = Liist.PLAYLISTS[i]
     let n = i
-    let src = playlist.images[0].url
+    try {    
+    	let src = playlist.images[0].url
+    } catch (e) {
+	img.style.background = "rgba(255,255,255,0.3)"
+      	Liist.PLAYLIST_CONTAINER.appendChild(img)
+    }
     let img = new Image()
     img.onload = () => {
       Liist.PLAYLIST_CONTAINER.appendChild(img)
