@@ -188,7 +188,11 @@ Liist.ADD_PLAYLISTS = () => {
     	img.src = src
     } catch (e) {
 	img.style.background = "rgba(255,255,255,0.3)"
-      	Liist.PLAYLIST_CONTAINER.appendChild(img)
+	let c = document.createElement("canvas")
+	let ctx = c.getContext("2d")
+	c.width = Liist.DIM
+	c.height = Liist.DIM
+	img.src = c.toDataURL()
     }
   }
 }
