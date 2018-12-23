@@ -1,4 +1,4 @@
-Liist.LAG = 400
+Liist.LAG = 800
 
 Liist.THEMES = [
   ["#4087FC","#FFFF02"],
